@@ -46,3 +46,27 @@ agregarBtn.addEventListener("click", () => {
 
 })
 
+let deleteButton = document.getElementById("btnDelete");
+deleteButton.addEventListener("click", () => {
+
+    let inputId = document.getElementById("inputDelete").value;
+
+    fetch(`https://672ce712fd8979715640a3c1.mockapi.io/users/${inputId}`, {
+        method: "DELETE"
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+});
+
+
