@@ -12,8 +12,14 @@ document.getElementById("btnGet1").addEventListener("click", async () => {
         //añade uno o varios resultados segun el caso
         (Array.isArray(data) ? data : [data]).forEach(user => {
             results.innerHTML += `<li>
-                ID: ${user.id}, Nombre: ${user.name}, Apellido: ${user.lastname}
-            </li>`;
+                ID: ${user.id}
+                <br>
+                Nombre: ${user.name}
+                <br>
+                Apellido: ${user.lastname}
+                <br>
+            </li>
+            <br>`;
         });
     } catch (error) {
         alert("algo salio mal: " );
